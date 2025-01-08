@@ -1,0 +1,16 @@
+services:
+  db-postgres16:
+    image: postgres:16.3
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: socialnetwork
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: adminpassword
+    volumes:
+      - pg16-vol:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"
+  
+volumes:
+  pg16-vol:
+    external: true
